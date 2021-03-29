@@ -145,6 +145,9 @@ class HomeVC: UIViewController {
         let resultsVC = ResultsVC()
         resultsVC.bmiReceived = bmiValue
         resultsVC.humanLooks = humanlooks
+        resultsVC.ageReceived = ageValue
+        resultsVC.genderReceived = gender
+        
         navigationController?.pushViewController(resultsVC, animated: true)
     }
     

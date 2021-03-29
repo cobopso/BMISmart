@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8CD5B4261182F2007AA428 /* HumanVisual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8CD5B3261182F2007AA428 /* HumanVisual.swift */; };
 		3DF05E1C260DAF5A005C4BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF05E1B260DAF5A005C4BA0 /* AppDelegate.swift */; };
 		3DF05E1E260DAF5A005C4BA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF05E1D260DAF5A005C4BA0 /* SceneDelegate.swift */; };
 		3DF05E20260DAF5A005C4BA0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF05E1F260DAF5A005C4BA0 /* HomeVC.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D8CD5B3261182F2007AA428 /* HumanVisual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanVisual.swift; sourceTree = "<group>"; };
 		3DF05E18260DAF5A005C4BA0 /* BMISmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMISmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF05E1B260DAF5A005C4BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DF05E1D260DAF5A005C4BA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF05E32260DBE60005C4BA0 /* Constants.swift */,
+				3D8CD5B3261182F2007AA428 /* HumanVisual.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				3DF05E20260DAF5A005C4BA0 /* HomeVC.swift in Sources */,
 				3DF05E1C260DAF5A005C4BA0 /* AppDelegate.swift in Sources */,
 				3DF05E1E260DAF5A005C4BA0 /* SceneDelegate.swift in Sources */,
+				3D8CD5B4261182F2007AA428 /* HumanVisual.swift in Sources */,
 				3DF05E35260DBEBA005C4BA0 /* ResultsVC.swift in Sources */,
 				3DF05E33260DBE60005C4BA0 /* Constants.swift in Sources */,
 			);

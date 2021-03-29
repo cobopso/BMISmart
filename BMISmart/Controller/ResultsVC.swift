@@ -33,6 +33,9 @@ class ResultsVC: UIViewController {
     
     //MARK:- bodyfit
     var fit: HumanFit = .Normal
+    var ageRecieved: Int?
+    var genderRecieved: Gender?
+    
     
     //MARK:- Load View
     override func loadView() {
@@ -51,8 +54,12 @@ class ResultsVC: UIViewController {
         
         // Get advice
         getFit(bmi: bmiReceived)
-        getAdvice(fit: fit)
-        getImage(humanlooks: humanLooks)
+
+        let humanVisual = HumanVisual(gender: genderReceived!, age: ageReceived!, look: fit)
+        imageResult.image = UIImage(named: humanVisual.getVisual())
+        adVice.text = humanVisual.getAdvice()
+        bmiValueLabel.textColor = humanVisual.getColor()
+        
         
         // Recalculator
         button.addTarget(self, action: #selector(reCalculate), for: .touchUpInside)
@@ -78,45 +85,6 @@ class ResultsVC: UIViewController {
             fit = .Obese
         default:
             fit = .Normal
-        }
-    }
-    
-    func getAdvice(fit: HumanFit) {
-        switch fit {
-        case .Underweight:
-            adVice.text = "Thiếu cân trầm trọng, hãy bổ sung dinh dưỡng ngay, bằng cách ăn nhiều cá, thịt và ngũ cốc. Cũng đừng quên ăn nhiều rau vào nhé!"
-            bmiValueLabel.textColor = .red
-            
-        case .Normal:
-            adVice.text = "Bạn có một cơ thể cân đối, chúc mừng bạn nhé!"
-            bmiValueLabel.textColor = .rightColor
-        case .Overweight:
-            adVice.text = "Bạn có chút thừa cân, hãy chăm tập thể dục lên nào!"
-            bmiValueLabel.textColor = .orange
-        case .Obese:
-            adVice.text = "Bạn mà không béo thì không có ai gầy, ngưng ăn nhiều thịt cá và các đồ ăn nhăn và đồ ăn nhiều đường. Tập thể dục đều đặn lên đi!"
-            bmiValueLabel.textColor = .red
-        }
-    }
-    
-    func getImage(humanlooks: Human) {
-        switch humanlooks {
-        case .boySlim:
-            imageResult.image = UIImage(named: "image-boySlim")
-        case .boyObese:
-            imageResult.image = UIImage(named: "image-boyObese")
-        case .girlSlim:
-            imageResult.image = UIImage(named: "image-girlSlim")
-        case .girlObese:
-            imageResult.image = UIImage(named: "image-girlObese")
-        case .manSlim:
-            imageResult.image = UIImage(named: "image-manSlim")
-        case .manObese:
-            imageResult.image = UIImage(named: "image-manObese")
-        case .womanSlim:
-            imageResult.image = UIImage(named: "image-womanSlim")
-        case .womanObese:
-            imageResult.image = UIImage(named: "image-womanObese")
         }
     }
     
@@ -232,13 +200,13 @@ class ResultsVC: UIViewController {
         // MARK:- Compact constraint
         compactConstraints.append(contentsOf: [
             button.heightAnchor.constraint(equalToConstant: 50),
-            imageResult.widthAnchor.constraint(equalToConstant: 160),
+            imageResult.widthAnchor.constraint(equalToConstant: 200),
         ])
         
         //MARK:- Regular constraints
         regularConstraints.append(contentsOf: [
             button.heightAnchor.constraint(equalToConstant: 60),
-            imageResult.widthAnchor.constraint(equalToConstant: 200),
+            imageResult.widthAnchor.constraint(equalToConstant: 360),
         ])
         
         //MARK:- Compact Height Constraints
